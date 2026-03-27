@@ -18,7 +18,7 @@ int main(){
     char* c = "hello world";
 
     my_print('C', &a);
-    my_print('D', &a);
+    my_print('D', &b);
     my_print('S', c);
     my_print('C', c);
 
