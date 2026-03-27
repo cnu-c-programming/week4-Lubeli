@@ -1,21 +1,40 @@
 #include <stdio.h>
 
-void swap_endian(int *x){
-    unsigned char* addr = (unsigned char*)&x;
+int sum(int arr[], int n){
+    int sum = 0;
+    for(int i = 0; i<n; i++)
+        sum += arr[i];
+    
+    return sum;
+}
 
-    printf("%x", *addr);
-    printf("%x", *(addr + 1));
-    printf("%x", *(addr + 2));
-    printf("%x", *(addr + 3));
+double average(int arr[], int n){
+    int sum = 0;
+    for(int i = 0; i<n; i++)
+        sum += arr[i];
+    double average = sum/n;
+
+    return average;
+}
+
+int max(int arr[], int n){
+    int max = arr[0];
+    for(int i = 0; i<n; i++){
+        if(arr[i]>max)
+            max = arr[i];
+    }
+
+    return max;
 
 }
 
 int main(){
-    int x = 0x12345678;
+    int arr[] = {3,7,1,9,4,6};
+    int n = sizeof(arr)/sizeof(arr[0]);
 
-    printf("%x\n", x);
-    swap_endian(&x);
-    printf("%x\n", x);
+    printf("sum: %d\n", sum(arr,n));
+    printf("avg: %.2f\n", average(arr,n));
+    printf("max: %d\n", max(arr,n));
 
     return 0;
 }
