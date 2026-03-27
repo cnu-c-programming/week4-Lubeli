@@ -8,11 +8,11 @@ int main(){
         void* addr_0 = &(arr[i]);
         void* addr_1 = &(arr[i+1]);
 
-        printf("address of arr[%d]: %p\n", i, addr_0);
-        printf("address of arr[%d+1]: %p\n", i, addr_1);
+        printf("address of arr[%d]: ,*n\n", i, addr_0);
+        printf("address of arr[%d+1]: .*n\n", i, addr_1);
         
-        printf("&(arr[%d] - &(arr[%d+1]) = .*\n", i, i, (unsigned long long)addr_1 
-        - (unsigned long long)addr_0);
+        printf("&(arr[%d] - &(arr[%d+1]) = %d\n", i, i, (long long)addr_1 
+        - (long long)addr_0);
         printf("\n");
     }
     return 0;
