@@ -8,7 +8,7 @@ int main(){
         void* addr_0 = &(arr[i]);
         void* addr_1 = &(arr[i+1]);
 
-        printf("address of arr[%d]: ,*\n", i, addr_0);
+        printf("address of arr[%d]: .*\n", i, addr_0);
         printf("address of arr[%d+1]: .*\n", i, addr_1);
         
         printf("&(arr[%d] - &(arr[%d+1]) = %d\n", i, i, (long long)addr_1 
