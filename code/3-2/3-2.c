@@ -1,13 +1,16 @@
 #include <stdio.h>
 
 void swap_endian(int *x){
-    unsigned char* addr = (unsigned char*)&x;
+    unsigned char *addr = (unsigned char*)x;
+    unsigned char tmp;
 
-    printf("%x", *addr);
-    printf("%x", *(addr + 1));
-    printf("%x", *(addr + 2));
-    printf("%x", *(addr + 3));
+    tmp = addr[0];
+    addr[0] = addr[3];
+    addr[3] = tmp;
 
+    tmp = addr[1];
+    addr[1] = addr[2];
+    addr[2] = tmp;
 }
 
 int main(){
